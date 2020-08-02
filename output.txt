@@ -1,1 +1,11 @@
-text file to send info to after its been scraped
+Inning:  Top 9
+Pitcher: Romo
+Batter:  Santana, C
+Count:   0 - 1
+Outs:    2 outs
+Home Team Runs:   1
+Home Team Hits:   2
+Home Team Errors: 0
+Away Team Runs:   3
+Away Team Hits:   7
+Away Team Errors: 1
