@@ -1,0 +1,31 @@
+Figuring out how to get the LEDs into a "matrix" because there isn't enough gpio on rpi0
+Looks like a 4x4 LED matrix would be reasonable.
+I think I will need an I2C IC LED extender
+
+Top/Bot Inning: 2
+Outs:           3
+Balls:          4
+Strikes:        3
+bases:          3
+
+Total LEDs:     15
+
+Concern here is that I'll need more gpio to power each segment of the display.
+If I figure out what to do for this, I can easily use more 7 seg displays for the other items below
+I could maybe use a 4 digit 7 segment display (SH5461AS?) for the score. 2 digits for home 2 digits for away
+Could use a 2 digit 7 segment display and use a MAX
+
+Inning Number:  single digit 7 seg disp 
+Score: 4 digit 7 segment display? Or 2 seperate 2 digit 7 seg displays?
+       SH5461AS + MCP23017 for both teams score.
+
+
+These are wishes for now but might try and throw them on an OLED display and have the info scroll
+Got the Screens from the old portable dvd players. Possibly use these? Not sure how they work yet.
+Batter Name:    oled
+Pitcher Name:   oled
+Pitch Count:    2 dig 7 seg disp or oled?
+Home Team Name: oled 
+Away Team Name: oled
+
+

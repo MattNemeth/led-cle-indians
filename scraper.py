@@ -20,14 +20,16 @@ while again:
     #set html parsing
     page_soup = soup(page_html,"html.parser")
 
-    homeData_r = page_soup.findAll("div",{"class":"sc-fzqLLg gOxPot"})
+    #surely there is a better way to store this data or a better find all system
+    #TODO: clean this up
+    homeData_r = page_soup.findAll(  "div",{"class":"sc-fzqLLg gOxPot"})
     homeData_h_e = page_soup.findAll("div",{"class":"sc-fzqLLg kQAmwW"})
-    awayData_r = page_soup.findAll("div",{"class":"sc-fzqLLg hPWsUK"})
+    awayData_r = page_soup.findAll(  "div",{"class":"sc-fzqLLg hPWsUK"})
     awayData_h_e = page_soup.findAll("div",{"class":"sc-fzqLLg cpfOdt"})
-    inningData = page_soup.findAll("div",{"class":"sc-fzomuh gHzJiR"})
-    playerData = page_soup.findAll("div",{"class":"sc-fzooss gDktbH"})
-    countData = page_soup.findAll("div",{"class":"sc-pZOBi hobWjs"})
-    outData = page_soup.findAll("svg",{"class":"sc-pBzUF kPMtGK"})
+    inningData = page_soup.findAll(  "div",{"class":"sc-fzomuh gHzJiR"})
+    playerData = page_soup.findAll(  "div",{"class":"sc-fzooss gDktbH"})
+    countData = page_soup.findAll(   "div",{"class":"sc-pZOBi hobWjs"})
+    outData = page_soup.findAll(     "svg",{"class":"sc-pBzUF kPMtGK"})
 
     # Runners onBase will be the trickiest. I can't grab a number or text
     # There is an "onBase" class that is set when there is a runner on base
@@ -48,18 +50,18 @@ while again:
     """
 
 
-    inning = inningData[0].text
+    inning =  inningData[0].text
     pitcher = playerData[0].text
-    batter = playerData[1].text
-    count = countData[0].text
-    outs = outData[0].text
+    batter =  playerData[1].text
+    count =   countData[0].text
+    outs =    outData[0].text
     
-    home_team_runs = homeData_r[0].text
-    home_team_hits = homeData_h_e[0].text
+    home_team_runs =   homeData_r[0].text
+    home_team_hits =   homeData_h_e[0].text
     home_team_errors = homeData_h_e[1].text
 
-    away_team_runs = awayData_r[0].text
-    away_team_hits = awayData_h_e[0].text
+    away_team_runs =   awayData_r[0].text
+    away_team_hits =   awayData_h_e[0].text
     away_team_errors = awayData_h_e[1].text
 
     #opens .txt file for temp data storage
