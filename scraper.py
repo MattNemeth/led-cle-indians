@@ -8,6 +8,7 @@ again = True
 
 #Makes loop infinite
 while again:
+    print("Test to see if it's doing anything")
 
     # Set the URL you want to webscrape from
     url = 'https://www.mlb.com/indians/scores'
@@ -22,14 +23,14 @@ while again:
 
     #surely there is a better way to store this data or a better find all system
     #TODO: clean this up
-    homeData_r = page_soup.findAll(  "div",{"class":"sc-fzqLLg gOxPot"})
-    homeData_h_e = page_soup.findAll("div",{"class":"sc-fzqLLg kQAmwW"})
-    awayData_r = page_soup.findAll(  "div",{"class":"sc-fzqLLg hPWsUK"})
-    awayData_h_e = page_soup.findAll("div",{"class":"sc-fzqLLg cpfOdt"})
-    inningData = page_soup.findAll(  "div",{"class":"sc-fzomuh gHzJiR"})
-    playerData = page_soup.findAll(  "div",{"class":"sc-fzooss gDktbH"})
-    countData = page_soup.findAll(   "div",{"class":"sc-pZOBi hobWjs"})
-    outData = page_soup.findAll(     "svg",{"class":"sc-pBzUF kPMtGK"})
+    homeData_r   = page_soup.findAll("div",{"class":"sc-fzoxnE hSvLzT"})
+    homeData_h_e = page_soup.findAll("div",{"class":"sc-fzoxnE EiGoQ"})
+    awayData_r   = page_soup.findAll("div",{"class":"sc-fzoxnE cjJfrY"})
+    awayData_h_e = page_soup.findAll("div",{"class":"sc-fzoxnE eSHmmv"})
+    inningData   = page_soup.findAll("div",{"class":"sc-fzqAui eoGDzK"})
+    playerData   = page_soup.findAll("div",{"class":"sc-fzqyvk cXvmPV"})
+    countData    = page_soup.findAll("div",{"class":"sc-pscky ksGtdo"})
+    outData      = page_soup.findAll("svg",{"class":"sc-oTNDV d1BCO"})
 
     # Runners onBase will be the trickiest. I can't grab a number or text
     # There is an "onBase" class that is set when there is a runner on base
@@ -48,7 +49,6 @@ while again:
     print("Test 2: ")
     print(test2)
     """
-
 
     inning =  inningData[0].text
     pitcher = playerData[0].text
