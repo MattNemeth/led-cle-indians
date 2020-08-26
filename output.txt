@@ -1,36 +1,40 @@
-Final
-Twins
-20 - 11
-Indians
-18 - 12
-R
-H
-E
-2
-6
-0
-4
-7
-0
-W
-:
-Bieber
-6 - 0
-,
-1.35
-ERA
-L
-:
-Alcala, J
-1 - 1
-,
-3.46
-ERA
-SV
-:
-Hand
-8
-Watch Archive
-Wrap
-Box
-Highlights
+0: Live
+1: Twins
+2: 20 - 11
+3: Indians
+4: 18 - 12
+5: R
+6: H
+7: E
+8: 2
+9: 5
+10: 0
+11: 0
+12: 1
+13: 0
+14: Top 2
+15: Bases.
+16: 2 outs
+17: 2 - 2
+18: STO, FSNO
+19: CLE
+20: Pitching
+21: MIN
+22: At Bat
+23: Clevinger
+24: 1.2
+25: IP
+26: 33P
+27: 3.93
+28: ERA
+29: Kepler
+30: 1
+31: -
+32: 1
+33: ,
+34: .838
+35: OPS
+36: Watch Live
+37: Gameday
+38: Highlights
+39: Cheer
