@@ -4,6 +4,23 @@ from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
 
+#pass in text to split based on '|' character
+def splitter(data):
+    splitList=[]
+    newStr=''
+    for i in data:
+        if i != '|':
+            newStr += str(i)
+        elif i == '|':
+            splitList.append(newStr)
+            newStr = ''
+    #adds the very last string to the list since the string does not start or end with '|'
+    if newStr != 0:
+        splitList.append(newStr)
+    return splitList
+
+
+
 again = True
 
 #Makes loop infinite
@@ -19,68 +36,24 @@ while again:
     
     #set html parsing
     page_soup = soup(page_html,"html.parser")
+    data = page_soup.find('div',{'data-test-mlb':'singleGameContainer'})
 
-    homeData_r = page_soup.findAll("div",{"class":"sc-fzqLLg gOxPot"})
-    homeData_h_e = page_soup.findAll("div",{"class":"sc-fzqLLg kQAmwW"})
-    awayData_r = page_soup.findAll("div",{"class":"sc-fzqLLg hPWsUK"})
-    awayData_h_e = page_soup.findAll("div",{"class":"sc-fzqLLg cpfOdt"})
-    inningData = page_soup.findAll("div",{"class":"sc-fzomuh gHzJiR"})
-    playerData = page_soup.findAll("div",{"class":"sc-fzooss gDktbH"})
-    countData = page_soup.findAll("div",{"class":"sc-pZOBi hobWjs"})
-    outData = page_soup.findAll("svg",{"class":"sc-pBzUF kPMtGK"})
+    #get_text not availible if data is a list of tags
+    #future proof thinking for having data for any live game
+    data = data.get_text('|', strip=True)
 
-    # Runners onBase will be the trickiest. I can't grab a number or text
-    # There is an "onBase" class that is set when there is a runner on base
-    # I plan to find the parent element, step through each sibling and
-    # detect which sibling has the "onBase" class and update based on which sibling
-    # contained that data
+    data = splitter(data)
+    print(data)
 
-    """
-    onBaseData = page_soup.findAll("svg",{"class":"sc-pciEQ eEPsSY"})
-
-    test1 = onBaseData[0].prettify()
-    print("Test 1: ")
-    print(test1)
-
-    test2 = onBaseData[0].rect.next_sibling
-    print("Test 2: ")
-    print(test2)
-    """
-
-
-    inning = inningData[0].text
-    pitcher = playerData[0].text
-    batter = playerData[1].text
-    count = countData[0].text
-    outs = outData[0].text
-    
-    home_team_runs = homeData_r[0].text
-    home_team_hits = homeData_h_e[0].text
-    home_team_errors = homeData_h_e[1].text
-
-    away_team_runs = awayData_r[0].text
-    away_team_hits = awayData_h_e[0].text
-    away_team_errors = awayData_h_e[1].text
 
     #opens .txt file for temp data storage
     file = open("output.txt","w")
     
     #clears contents of file
     file.truncate()
-
-    file.write("Inning:  " + str(inning) + "\n")
-    file.write("Pitcher: " + str(pitcher) + "\n")
-    file.write("Batter:  " + str(batter) + "\n")
-    file.write("Count:   " + str(count) + "\n")
-    file.write("Outs:    " + str(outs) + "\n")
-
-    file.write("Home Team Runs:   " + str(home_team_runs) + "\n")
-    file.write("Home Team Hits:   " + str(home_team_hits) + "\n")
-    file.write("Home Team Errors: " + str(home_team_errors) + "\n")
-
-    file.write("Away Team Runs:   " + str(away_team_runs) + "\n")
-    file.write("Away Team Hits:   " + str(away_team_hits) + "\n")
-    file.write("Away Team Errors: " + str(away_team_errors) + "\n")
+        
+    for i in data:
+        file.write(str(i) + "\n")
 
     file.close()
 
