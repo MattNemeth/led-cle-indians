@@ -25,7 +25,6 @@ again = True
 
 #Makes loop infinite
 while again:
-
     # Set the URL you want to webscrape from
     url = 'https://www.mlb.com/indians/scores'
     
@@ -44,7 +43,6 @@ while again:
 
     data = splitter(data)
     print(data)
-
 
     #opens .txt file for temp data storage
     file = open("output.txt","w")
