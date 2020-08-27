@@ -6,10 +6,11 @@ from bs4 import BeautifulSoup as soup
 import helpers
 from helpers import splitter
 
-again = True
+#again = True
+cnt = 0
 
 #Makes loop infinite
-while again:
+while True:
     # Set the URL you want to webscrape from
     url = 'https://www.mlb.com/indians/scores'
     
@@ -31,7 +32,10 @@ while again:
     balls =   int(data[17][0])
     strikes = int(data[17][4])
     outs =    int(data[16][0])
+    innNum =  int(data[14][4])
+    innTB =   str(data[14][0:3])
     
+    helpers.displayInning(innNum, innTB) 
     helpers.displayStats(balls,strikes,outs)
 
     #opens .txt file for temp data storage
@@ -45,10 +49,13 @@ while again:
         file.write(str(c) + ': ' + val + "\n")
 
     file.close()
-
+    print(str(cnt) + ': Sleeping and searching again...')
+    cnt += 1
+    time.sleep(10)
+    """
     again = input("Run again? (y/n)")
     if (again == 'y') or (again == 'Y'):
         again = True
     else:
         again = False
-
+    """

@@ -1,6 +1,19 @@
 import time
 from gpiozero import LED
 
+out1 = LED(11)
+out2 = LED(9)
+out3 = LED(10)
+ball1 = LED(26)
+ball2 = LED(19)
+ball3 = LED(13)
+ball4 = LED(6)
+strike1 = LED(21)
+strike2 = LED(20)
+strike3 = LED(16)
+topInn = LED(12)
+botInn = LED(5)
+
 #pass in text to split based on '|' character
 def splitter(data):
     splitList=[]
@@ -16,21 +29,30 @@ def splitter(data):
         splitList.append(newStr)
     return splitList
 
-out1 = LED(11)
-out2 = LED(9)
-out3 = LED(10)
-ball1 = LED(26)
-ball2 = LED(19)
-ball3 = LED(13)
-ball4 = LED(6)
-strike1 = LED(21)
-strike2 = LED(20)
-strike3 = LED(16)
-
 def displayStats(balls, strikes, outs):
     displayBalls(balls)
     displayStrikes(strikes)
     displayOuts(outs)
+    return
+
+def displayInning(innNum, innTB):
+    #handle innNum later
+    if innTB == 'Top':
+        print('its top')
+        topInn.on()
+        botInn.off()
+    elif innTB == 'Bot':
+        print('its bot')
+        botInn.on()
+        topInn.off()
+    else:
+        print('test')
+        print(innTB)
+        print(type(innTB))
+        print('Top')
+        print('not top or bot')
+        topInn.off()
+        botInn.off()
     return
 
 def displayOuts(outs):
