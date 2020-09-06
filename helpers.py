@@ -130,9 +130,10 @@ def displayStrikes(strikes):
     return
 
 def displayBases(bases):
-    lst = [1,1,1]
+    lst = [0,0,0]
     for cnt, i in enumerate(bases):
-        if i.find('transparent') != (-1):
-           lst[cnt] = 0 
+        print(i)
+        if 'onBase' in i:
+           lst[cnt] = 1 
            #turn off a specific led here
     return lst

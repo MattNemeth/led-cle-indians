@@ -11,7 +11,7 @@ cnt = 0
 again = True
 
 # Set the URL you want to webscrape from
-url = 'https://www.mlb.com/indians/scores'
+url = 'https://www.mlb.com/cubs/scores'
 #url = 'espn.com/mlb/scoreboard'
 
 #Makes loop infinite
