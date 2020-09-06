@@ -1,38 +1,38 @@
 0: Live
-1: Twins
-2: 20 - 11
+1: Brewers
+2: 18 - 19
 3: Indians
-4: 18 - 12
+4: 23 - 15
 5: R
 6: H
 7: E
 8: 3
-9: 10
+9: 7
 10: 0
-11: 6
-12: 10
+11: 3
+12: 4
 13: 2
-14: Top 9
-15: Bases.
-16: 1 outs
+14: Top 8
+15: Bases [0, 0, 0]
+16: 0 outs
 17: 0 - 0
-18: STO, FSNO
+18: MLBN, STO, FSWI
 19: CLE
 20: Pitching
-21: MIN
+21: MIL
 22: At Bat
-23: Hand
+23: Wittgren
 24: 0.1
 25: IP
-26: 6P
-27: 4.00
+26: 10P
+27: 2.30
 28: ERA
-29: Sanó
+29: Narváez
 30: 1
 31: -
-32: 3
+32: 2
 33: ,
-34: .914
+34: .600
 35: OPS
 36: Watch Live
 37: Gameday

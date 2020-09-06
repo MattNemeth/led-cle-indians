@@ -8,12 +8,14 @@ from helpers import splitter
 
 #again = True
 cnt = 0
+again = True
+
+# Set the URL you want to webscrape from
+url = 'https://www.mlb.com/indians/scores'
+#url = 'espn.com/mlb/scoreboard'
 
 #Makes loop infinite
-while True:
-    # Set the URL you want to webscrape from
-    url = 'https://www.mlb.com/indians/scores'
-    
+while again:
     # Connect to the URL
     uClient = uReq(url)
     page_html = uClient.read()
@@ -22,6 +24,7 @@ while True:
     #set html parsing
     page_soup = soup(page_html,"html.parser")
     data = page_soup.find('div',{'data-test-mlb':'singleGameContainer'})
+    bases = data.findAll('rect')
 
     #get_text not availible if data is a list of tags
     #future proof thinking for having data for any live game
@@ -37,6 +40,10 @@ while True:
     
     helpers.displayInning(innNum, innTB) 
     helpers.displayStats(balls,strikes,outs)
+    bases = helpers.displayBases(bases)
+    
+    #base list is [3rd base, 2nd base, 1st base]
+    data[15] = 'Bases ' + str(bases)
 
     #opens .txt file for temp data storage
     file = open("output.txt","w")
@@ -49,10 +56,13 @@ while True:
         file.write(str(c) + ': ' + val + "\n")
 
     file.close()
+
+    again = False
+    """
     print(str(cnt) + ': Sleeping and searching again...')
     cnt += 1
-    time.sleep(10)
-    """
+    time.sleep(100)
+
     again = input("Run again? (y/n)")
     if (again == 'y') or (again == 'Y'):
         again = True
