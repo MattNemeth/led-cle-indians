@@ -11,7 +11,7 @@ cnt = 0
 again = True
 
 # Set the URL you want to webscrape from
-url = 'https://www.mlb.com/cubs/scores'
+url = 'https://www.mlb.com/astros/scores'
 #url = 'espn.com/mlb/scoreboard'
 
 #Makes loop infinite
@@ -57,7 +57,7 @@ while again:
 
     file.close()
 
-    again = False
+    again = True
     """
     print(str(cnt) + ': Sleeping and searching again...')
     cnt += 1

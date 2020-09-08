@@ -13,6 +13,9 @@ strike2 = LED(20)
 strike3 = LED(16)
 topInn = LED(12)
 botInn = LED(5)
+first = LED(14)
+second = LED(15)
+third = LED(18)
 
 #pass in text to split based on '|' character
 def splitter(data):
@@ -131,9 +134,17 @@ def displayStrikes(strikes):
 
 def displayBases(bases):
     lst = [0,0,0]
+    first.off()
+    second.off()
+    third.off()
     for cnt, i in enumerate(bases):
         print(i)
-        if 'onBase' in i:
+        if 'onBase' in str(i):
            lst[cnt] = 1 
-           #turn off a specific led here
+           if cnt == 2: #first
+               first.on()
+           elif cnt == 1: #second
+               second.on()
+           elif cnt == 0: #third
+               third.on()
     return lst
