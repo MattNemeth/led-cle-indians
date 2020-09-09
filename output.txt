@@ -1,38 +1,38 @@
 0: Live
-1: Astros
-2: 21 - 19
-3: Athletics
-4: 23 - 14
+1: Royals
+2: 14 - 28
+3: Indians
+4: 26 - 15
 5: R
 6: H
 7: E
-8: 0
-9: 7
+8: 3
+9: 3
 10: 0
-11: 2
-12: 3
+11: 5
+12: 7
 13: 0
-14: Top 6
-15: Bases [0, 1, 1]
-16: 2 outs
-17: 1 - 0
-18: NBCSCA, ATTH
-19: OAK
+14: Bot 6
+15: Bases [0, 0, 0]
+16: 0 outs
+17: 0 - 1
+18: STO, FSKC
+19: KC
 20: Pitching
-21: HOU
+21: CLE
 22: At Bat
-23: Bassitt
-24: 5.2
+23: Zimmer
+24: 0.2
 25: IP
-26: 78P
-27: 3.21
+26: 13P
+27: 1.62
 28: ERA
-29: Díaz, A
-30: 1
+29: Reyes, F
+30: 0
 31: -
 32: 2
 33: ,
-34: .684
+34: .916
 35: OPS
 36: Watch Live
 37: Gameday

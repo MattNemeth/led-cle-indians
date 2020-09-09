@@ -11,13 +11,15 @@ cnt = 0
 again = True
 
 # Set the URL you want to webscrape from
-url = 'https://www.mlb.com/astros/scores'
+url = 'https://www.mlb.com/indians/scores'
 #url = 'espn.com/mlb/scoreboard'
 
 #Makes loop infinite
 while again:
     # Connect to the URL
     uClient = uReq(url)
+    print('sleeping 10 to wait for JS')
+    time.sleep(10)
     page_html = uClient.read()
     uClient.close()
     
