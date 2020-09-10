@@ -18,8 +18,6 @@ url = 'https://www.mlb.com/indians/scores'
 while again:
     # Connect to the URL
     uClient = uReq(url)
-    print('sleeping 10 to wait for JS')
-    time.sleep(10)
     page_html = uClient.read()
     uClient.close()
     
