@@ -1,3 +1,5 @@
+# LED Display of current score for MLB baseball games
+
 Steps to success
 
 1. Find a website to scrape from that the url doesnt change: mlb.com/indians/scores looks promising
